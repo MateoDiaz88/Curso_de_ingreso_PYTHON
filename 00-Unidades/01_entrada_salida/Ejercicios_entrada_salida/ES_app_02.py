@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Mateo 
+apellido:Diaz Beleña
 ---
 Ejercicio: entrada_salida_02
 ---
@@ -27,9 +27,14 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
-        
+        title="Ingrese su fecha de nacimiento"
+
+        nacimiento_usuario=prompt(title, "Fecha de nacimiento")
+
+        title_alert= "Usted nació el"
+
+        alert(title_alert,nacimiento_usuario)
+
     
 if __name__ == "__main__":
     app = App()
