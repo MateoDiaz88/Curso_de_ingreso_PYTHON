@@ -44,12 +44,10 @@ class App(customtkinter.CTk):
         
         resultado_2 = self.txt_operador_b.get()
 
-        int(resultado_1)
+    
+        suma= float(resultado_1) + float(resultado_2)
 
-        int(resultado_2)
-     
-
-    #alert(None, f"El resutado de la suma es:{resultado_suma}")
+        alert(None, message= f"El resultado de la suma es: {suma}")
      
 
 if __name__ == "__main__":
