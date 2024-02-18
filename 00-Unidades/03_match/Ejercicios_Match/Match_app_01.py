@@ -43,7 +43,30 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes_seleccionado = self.combobox_mes.get()
+
+        match mes_seleccionado:
+            case "Enero": # el case sirve para establecer los casos en el que match deba realizar una acción
+                alert("Mes","Que comiences bien el año!!!")
+            
+            case "Marzo":
+
+                alert("Mes", "A clases!!!")
+            
+            case "Julio":
+
+                alert("Mes", "Se vienen las vacaciones!!")
+
+            case "Diciembre":
+
+                alert("Mes", "Felices fiestas!!")
+            
+            case _:
+                alert("Mes", "Seleccionó un mes incorrecto") 
+                #Se puede llamar tambien "Default"
+                #establece una acción para los casos no aclarados anteriormente (como un else)
+                #otra alternativa del default es poner arriba de todk una variable que avise el error en el caso de que no se cumpla ninguno
+
     
     
 if __name__ == "__main__":

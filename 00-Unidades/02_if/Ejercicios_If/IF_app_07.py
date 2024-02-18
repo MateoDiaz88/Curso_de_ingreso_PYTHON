@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Mateo 
+apellido: Diaz Beleña
 ---
 Ejercicio: if_07
 ---
@@ -42,7 +42,105 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad_ingresada = self.txt_edad.get()
+
+        edad_ingresada = int(edad_ingresada)
+
+        tipo = self.combobox_tipo.get()
+
+        if tipo == "NATIVO":
+             
+             if edad_ingresada > 15 :
+                  
+                  mensaje_voto = "Usted puede concurrir a votación."
+             
+             else:
+                
+                  mensaje_voto = "Usted no puede concurrir a votación."
+        else:
+            if edad_ingresada > 17:
+
+                mensaje_voto = "Usted puede concurrir a votación."
+
+            else:
+
+                mensaje_voto = "Usted no puede concurrir a votación."  
+                  
+
+        alert("INFO", mensaje_voto)
+
+    
+
+
+
+
+
+
+
+
+
+
+        #EJERCICIO DE LA CLASE DE APOYO:
+        if edad_ingresada < 13:
+            
+            mensaje_edad = "Feliz día"
+        
+        elif edad_ingresada < 18:
+               
+               mensaje_edad = "Usted es adolescente"
+
+               if edad_ingresada == 17:
+                    
+                    mensaje_edad += ", ultimo año"
+
+        else:
+             
+             mensaje_edad = "Tenes edad para laburar"
+             
+             if edad_ingresada == 33:
+                
+                    mensaje_edad += ", como cristo"
+
+             elif edad_ingresada > 60:
+                
+                    mensaje_edad += ", a jubilarse"
+                    
+                    if edad_ingresada == 88:
+                         mensaje_edad += ", lindo número"
+            
+
+                    
+        if edad_ingresada % 2 == 0:
+            par = "y sos par!"
+        else:
+            par = ""
+
+        
+
+        alert("INFO", f"{mensaje_edad} {par}")
+                    
+    
+
+
+                
+           
+            
+            
+          
+        
+              
+            
+
+
+            
+            
+
+
+            
+            
+        
+           
+
         
         
     

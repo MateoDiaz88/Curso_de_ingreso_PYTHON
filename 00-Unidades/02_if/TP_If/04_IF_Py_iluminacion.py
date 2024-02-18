@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Mateo
+apellido: Diaz Beleña
 ---
 TP: IF_Iluminacion
 ---
@@ -43,8 +43,83 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca_lamparitas = self.combobox_marca.get()
+
+        cantidad_lamparitas = int(self.combobox_cantidad.get())
+
+        precio_lamparitas = cantidad_lamparitas * 800
+
+        if cantidad_lamparitas > 5:
+            
+            descuento_lamparitas = precio_lamparitas * 50 / 100
+            
+            precio_total = precio_lamparitas - descuento_lamparitas
         
+        elif cantidad_lamparitas == 5:
+            
+            if marca_lamparitas == "ArgentinaLuz":
+               
+               descuento_lamparitas = precio_lamparitas * 40 / 100
+               
+               precio_total = precio_lamparitas - descuento_lamparitas
+            
+            else:
+                descuento_lamparitas = precio_lamparitas * 30 / 100
+                
+                precio_total = precio_lamparitas - descuento_lamparitas
+        
+        elif cantidad_lamparitas == 4:
+
+            if marca_lamparitas == "ArgentinaLuz" or marca_lamparitas == "FelipeLamparas":
+
+                descuento_lamparitas = precio_lamparitas * 25 / 100
+                
+                precio_total = precio_lamparitas - descuento_lamparitas
+            
+            else:
+                descuento_lamparitas = precio_lamparitas * 20 / 100
+            
+                precio_total = precio_lamparitas - descuento_lamparitas
+        
+        elif cantidad_lamparitas == 3:
+
+            if marca_lamparitas == "ArgentinaLuz":
+
+                descuento_lamparitas = precio_lamparitas * 15 / 100
+                
+                precio_total = precio_lamparitas - descuento_lamparitas
+
+            elif marca_lamparitas == "FelipeLamparas":
+
+                descuento_lamparitas = precio_lamparitas * 10 / 100
+                
+                precio_total = precio_lamparitas - descuento_lamparitas
+            
+            else:
+                descuento_lamparitas = precio_lamparitas * 5 / 100
+                
+                precio_total = precio_lamparitas - descuento_lamparitas
+
+        else:
+            precio_total = precio_lamparitas
+        
+
+        if precio_total > 4000:
+
+            descuento_lamparitas = precio_total * 5/100
+
+            precio_final = precio_total - descuento_lamparitas
+            
+        else:
+
+            precio_final = precio_total
+
+
+        
+        alert("Resultado a pagar", f"El total de su compra es {precio_final}")
+
+
+    
     
 if __name__ == "__main__":
     app = App()

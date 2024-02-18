@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Mateo
+apellido: Diaz Beleña
 ---
 Ejercicio: while_02bis
 ---
@@ -29,7 +29,58 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        
+
+        contador_pares = 0
+
+        multiplos_cinco = 0
+
+        numeros_divisibles_cien = 0
+
+        suma_total = 0
+
+        contador = 0 
+
+        numero = prompt("Error", "Ingrese número entre el 100 y 1000")
+
+        numero = int(numero)
+
+        while numero < 99 or numero > 1001:
+
+            numero = prompt("Error", "Ingrese número entre el 100 y 1000")
+
+            numero = int(numero)
+
+
+        while contador < numero:
+
+            if contador % 2 == 0:
+
+                contador_pares = contador_pares + 1
+
+            if contador % 5 == 0:
+
+                multiplos_cinco = multiplos_cinco + 1
+
+            
+
+            if contador % 100 == 0:
+
+                numeros_divisibles_cien = numeros_divisibles_cien + 1   
+
+            contador = contador + 1        
+
+            suma_total = suma_total + contador
+
+            
+
+        
+        alert("Resultado", f"El numero igresado es {contador}, hay {contador_pares} pares, {numeros_divisibles_cien} números divisibles por cien, {multiplos_cinco} multiplos de cinco y la suma acumluda de todos números {suma_total}")
+
+
+
+
+
     
     
 if __name__ == "__main__":

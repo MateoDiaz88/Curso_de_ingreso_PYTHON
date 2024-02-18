@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Mateo 
+apellido: Diaz Beleña
 ---
 Ejercicio: Match_09
 ---
@@ -57,7 +57,76 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        destino_ingresado = self.combobox_destino.get()
+
+        estacion_ingresada = self.combobox_estaciones.get()
+
+        tarifa_estadia = 15000
+    
+
+        match estacion_ingresada:
+
+            case "Invierno" :
+
+                match destino_ingresado:
+
+                    case "Bariloche":
+
+                        aumento_tarifa = tarifa_estadia * 20 / 100
+
+                        tarifa_final = tarifa_estadia + aumento_tarifa
+                    
+                    case "Cataratas" | "Cordoba":
+
+                        descuento_tarifa = tarifa_estadia * 10 / 100
+
+                        tarifa_final = tarifa_estadia - descuento_tarifa
+                    
+                    case "Mar del plata":
+
+                        descuento_tarifa = tarifa_estadia * 20 / 100
+
+                        tarifa_final= tarifa_estadia - descuento_tarifa
+            
+            case "Verano":
+
+                match destino_ingresado:
+
+                    case "Bariloche":
+
+                        descuento_tarifa = tarifa_estadia * 20 / 100
+
+                        tarifa_final = tarifa_estadia - descuento_tarifa
+                    
+                    case "Cataratas" | "Cordoba":
+
+                        aumento_tarifa = tarifa_estadia * 10 / 100
+
+                        tarifa_final = tarifa_estadia + aumento_tarifa
+
+                    case "Mar del plata":
+
+                        aumento_tarifa = tarifa_estadia * 20 / 100
+                    
+                        tarifa_final = tarifa_estadia + aumento_tarifa
+            
+            case "Primavera" | "Otoño":
+
+                match destino_ingresado:
+
+                    case "Cataratas" | "Bariloche" | "Mar del plata":
+
+                        aumento_tarifa = tarifa_estadia * 20 / 100
+
+                        tarifa_final = tarifa_estadia + aumento_tarifa
+
+                    case "Cordoba":
+                        
+                        tarifa_final = tarifa_estadia
+
+        alert("TARIFA", f"El precio precio de la estadía de su destino es de ${tarifa_final}")
+
+
             
     
 if __name__ == "__main__":

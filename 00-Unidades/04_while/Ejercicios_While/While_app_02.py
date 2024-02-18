@@ -29,7 +29,22 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+      
+        contador = 10
+      
+        while contador > 0:
+            
+            print(contador)
+            
+            contador = contador - 1
+
+            print(contador)
+      
+      
+        #clave = prompt("login","ingrese clave")
+       # while clave != "miclave" and clave != "MICLAVE":
+        #    clave = prompt("error login","ingrese clave")
+       # print(clave)
     
     
 if __name__ == "__main__":

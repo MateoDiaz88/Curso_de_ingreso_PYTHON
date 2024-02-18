@@ -16,6 +16,8 @@ Para el departamento de facturación:
     B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
 	C.	ingresar tres precios de productos sumarlos y mostrar el precio final (más IVA 21%).
 '''
+        
+        
 
 class App(customtkinter.CTk):
     
@@ -52,13 +54,54 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        
+        primer_importe = self.txt_importe_1.get()
+
+        segundo_importe = self.txt_importe_2.get()
+
+        tercer_importe = self.txt_importe_3.get()
+
+        suma_importes = int(primer_importe) + int(segundo_importe) + int(tercer_importe)
+
+        alert("Total",f"La suma de los importes es {suma_importes}.")
+
 
     def btn_promedio_on_click(self):
-        pass
+        
+        primer_importe = self.txt_importe_1.get()
+
+        segundo_importe = self.txt_importe_2.get()
+
+        tercer_importe = self.txt_importe_3.get()
+
+        total_importes = int(primer_importe) + int(segundo_importe) + int(tercer_importe)
+
+        promedio_importes = total_importes / 3
+
+        alert("Total",f"El promedio de los importes es {promedio_importes}." )
+
 
     def btn_total_iva_on_click(self):
-        pass      
+        primer_importe = self.txt_importe_1.get()
+
+        segundo_importe = self.txt_importe_2.get()
+
+        tercer_importe = self.txt_importe_3.get()
+
+        suma_importes = int(primer_importe) + int(segundo_importe) + int(tercer_importe)
+
+        calculo_iva = suma_importes * 21 / 100
+
+        resultado_total = suma_importes + calculo_iva
+
+        alert("Total",f"La suma de los importes con el IVA agregado es {resultado_total}.")
+
+
+
+
+
+
+
     
 if __name__ == "__main__":
     app = App()
